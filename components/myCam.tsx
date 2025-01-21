@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Alert, Button, Image, Text, View } from 'react-native';
-import { launchCamera } from 'react-native-image-picker';
+import { launchCamera, launchImageLibrary } from 'react-native-image-picker';
 import { request , PERMISSIONS, RESULTS} from 'react-native-permissions';
 
 var camChk = false
+var storageChk = false
 function myCam(props) {
 
     const [imgUrl, setImgUrl] = useState(null) //선택한 이미지 경로 
@@ -11,7 +12,7 @@ function myCam(props) {
 
     useEffect(()=>{
         camChk = requestCamPermission()
-        requestStoragePermission()
+        storageChk = requestStoragePermission()
     },[])
 
     //카메라 권한요청 함수
@@ -73,12 +74,39 @@ function myCam(props) {
 
     }
 
+    const openGallery = async ()=>{
+        //저장소 권한 확인
+        if(!storageChk){
+            return;
+        }
+
+        launchImageLibrary(
+            {
+                mediaType :'photo',
+                quality:1
+            },
+
+            (res)=>{
+                if(res.didCancel){
+                    console.log('갤러리 취소')
+                }else if(res.errorCode){
+                    console.log('갤러리 에러', res.errorMessage)
+                }else{
+                    const mySrc = {uri:res.assets[0].uri}
+                    setImgUrl(mySrc.uri)
+                }
+            }
+        )
+
+    }
+
 
 
     return (
         <View>
             <Text>카메라입니다.</Text>
             <Button title="카메라" onPress={openCamera}/>
+            <Button title="갤러리" onPress={openGallery}/>
             {
                 imgUrl && (<Image 
                     source={{uri : imgUrl}}

@@ -79,3 +79,8 @@ npm install react-native-maps @react-native-community/geolocation
 
 camera
 npm install react-native-image-picker react-native-permissions
+
+
+
+webView
+npm install react-native-webview
