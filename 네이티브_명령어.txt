@@ -1,0 +1,81 @@
+리액트네이티브 설치
+npm install @react-native-community/cli --save-dev
+리액트네이티브 프로젝트 생성
+npx @react-native-community/cli init nativeProj
+
+java 설치
+
+
+환경변수 등록
+JAVA_HOME : java jdk 위치
+path 에 경로 추가 : %JAVA_HOME%\bin
+
+ANDROID_HOME :  ANDROID sdk 위치 --> 안드로이드스튜디오 파일 > setting > language & framework > android sdk 에서 확인
+path 에 경로 추가 : %ANDROID_HOME%   , %ANDROID_HOME%\platform-tools
+
+
+adb 확인
+cmd 창 : adb devices
+unauthized 나 none 인 경우
+adb kill-server 로 서버 종료 후
+adb start-server 로 서버 재기동
+adb devices  로 확인
+List of devices attached
+emulator-5554   device
+
+
+네이티브프로젝트 > android 프롬프트
+.\gradlew clean
+.\gradlew build
+
+
+
+네이티브프로젝트  프롬프트
+npm i
+npm start
+
+
+picker 설치
+npm install @react-native-picker/picker
+
+slider
+npm install @react-native-community/slider
+
+datetimepicker
+npm install @react-native-community/datetimepicker
+
+progressBar
+npm install react-native-progress
+npm install react-native-svg --save
+
+
+
+이미지 슬라이드
+npm i react-native-web-swiper
+
+
+게시판
+npm i @react-navigation/native @react-navigation/stack react-native-gesture-handler  react-native-screens react-native-safe-area-context
+
+게시판 에러난 사람만 ... =========================================
+
+
+프로젝트 > npm i
+프로젝트 \ 안드로이드 > app > .cxx 제거
+프로젝트 \ 안드로이드 > .\gradlew clean
+
+프로젝트 > npm start
+
+========================================
+
+firebase 
+
+npm install @react-native-firebase/app @react-native-firebase/database
+
+
+Map
+npm install react-native-maps @react-native-community/geolocation
+
+
+camera
+npm install react-native-image-picker react-native-permissions
