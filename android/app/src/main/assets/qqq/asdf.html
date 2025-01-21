@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asdf.html</title>
+    <script>
+        function fn_1(){
+            console.log("fn_1 실행")
+            alert("fn_1 실행")
+        }
+
+        function fn_2(){
+            window.ReactNativeWebView.postMessage('1234');  //앱 으로 보내는 함수
+            alert("fn_2 실행")
+        }
+    </script>
+</head>
+<body>
+    <h1>asdf.html</h1>
+    <p>난 몸통</p>
+    <button onclick="fn_1()">fn_1</button>
+    <button onclick="fn_2()">fn_2</button>
+
+</body>
+</html>
