@@ -12,7 +12,16 @@
 
         function fn_2(){
             window.ReactNativeWebView.postMessage('1234');  //앱 으로 보내는 함수
-            alert("fn_2 실행")
+            //alert("fn_2 실행")
+        }
+
+        function fn_3(){
+            window.ReactNativeWebView.postMessage('5678');  //앱 으로 보내는 함수
+            //alert("fn_3 실행")
+        }
+
+        function h1BG(){
+            document.querySelector("h1").style.backgroundColor="#0f0"
         }
     </script>
 </head>
@@ -21,6 +30,6 @@
     <p>난 몸통</p>
     <button onclick="fn_1()">fn_1</button>
     <button onclick="fn_2()">fn_2</button>
-
+    <button onclick="fn_3()">fn_3</button>
 </body>
 </html>

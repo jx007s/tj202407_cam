@@ -84,3 +84,9 @@ npm install react-native-image-picker react-native-permissions
 
 webView
 npm install react-native-webview
+
+폴더, 파일
+npm install react-native-fs
+
+
+npx react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
